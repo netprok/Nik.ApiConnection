@@ -2,5 +2,5 @@
 
 public interface IHttpClientFactory
 {
-    HttpClient CreateClient(ApiConfigBase apiConfigBase);
+    HttpClient CreateClient(ApiConfig apiConfig);
 }

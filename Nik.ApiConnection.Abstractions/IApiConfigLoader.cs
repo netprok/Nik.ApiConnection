@@ -2,5 +2,5 @@
 
 public interface IApiConfigLoader
 {
-    ApiConfigBase Load(string key);
+    ApiConfig Load(string key);
 }

@@ -1,8 +1,8 @@
 ﻿namespace Nik.ApiConnection;
 
-public sealed class AppSettingsApiConfigLoader(IOptions<List<ApiConfigBase>> Apis) : IApiConfigLoader
+public sealed class AppSettingsApiConfigLoader(IOptions<List<ApiConfig>> Apis) : IApiConfigLoader
 {
-    public ApiConfigBase Load(string key)
+    public ApiConfig Load(string key)
     {
         if (Apis == null || Apis.Value == null)
         {

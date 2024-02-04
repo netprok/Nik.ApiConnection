@@ -2,7 +2,7 @@
 
 public sealed class HttpClientFactory(ILogger<HttpClientFactory> logger) : IHttpClientFactory
 {
-    public HttpClient CreateClient(ApiConfigBase apiConfig)
+    public HttpClient CreateClient(ApiConfig apiConfig)
     {
         if (string.IsNullOrWhiteSpace(apiConfig.Url))
         {
