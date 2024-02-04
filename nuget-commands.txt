@@ -1,7 +1,7 @@
 Install-Package NuGet.CommandLine
 
-dotnet pack -c Release -p:Version=1.2.11
+dotnet pack -c Release -p:Version=1.2.13
 
-nuget add '.\Nik.ApiConnection\bin\Release\Nik.ApiConnection.1.2.11.nupkg' -source 'D:\OneDrive\Software Development\nik-nuget-package-source'
-nuget add '.\Nik.ApiConnection.Abstractions\bin\Release\Nik.ApiConnection.Abstractions.1.2.11.nupkg' -source 'D:\OneDrive\Software Development\nik-nuget-package-source'
-nuget add '.\Nik.ApiConnection.Models\bin\Release\Nik.ApiConnection.Models.1.2.11.nupkg' -source 'D:\OneDrive\Software Development\nik-nuget-package-source'
+nuget add '.\Nik.ApiConnection\bin\Release\Nik.ApiConnection.1.2.13.nupkg' -source 'D:\OneDrive\Software Development\nik-nuget-package-source'
+nuget add '.\Nik.ApiConnection.Abstractions\bin\Release\Nik.ApiConnection.Abstractions.1.2.13.nupkg' -source 'D:\OneDrive\Software Development\nik-nuget-package-source'
+nuget add '.\Nik.ApiConnection.Models\bin\Release\Nik.ApiConnection.Models.1.2.13.nupkg' -source 'D:\OneDrive\Software Development\nik-nuget-package-source'

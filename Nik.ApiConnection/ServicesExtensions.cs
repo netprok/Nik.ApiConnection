@@ -2,7 +2,7 @@
 
 public static class ServicesExtensions
 {
-    public static IServiceCollection AddNikApiConfigs(this IServiceCollection services)
+    public static IServiceCollection AddNikApiConnection(this IServiceCollection services)
     {
         services.AddSingleton<IHttpClientFactory, HttpClientFactory>();
         services.AddSingleton<IApiCacher, ApiCacher>();
