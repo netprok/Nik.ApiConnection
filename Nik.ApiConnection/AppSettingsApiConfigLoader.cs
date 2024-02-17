@@ -6,9 +6,9 @@ public sealed class AppSettingsApiConfigLoader(
 {
     public ApiConfig Load(string key)
     {
-        var apis = jsonSerializer.Deserialize<List<ApiConfig>>(configuration.Value.GetSection("apis").Value??string.Empty);
+        var apis = jsonSerializer.Deserialize<List<ApiConfig>>(configuration.Value.GetSection("apis").Value ?? string.Empty);
 
-        if (apis == null )
+        if (apis == null)
         {
             throw new Exception("Apis section not found.");
         }
