@@ -1,19 +1,17 @@
 ﻿namespace Nik.ApiConnection;
 
-public sealed class AppSettingsApiConfigLoader(
-    IJsonSerializer jsonSerializer,
-    IOptions<IConfigurationRoot> configuration) : IApiConfigLoader
+public sealed class AppSettingsApiConfigLoader() : IApiConfigLoader
 {
     public ApiConfig Load(string key)
     {
-        var apis = jsonSerializer.Deserialize<List<ApiConfig>>(configuration.Value.GetSection("apis").Value ?? string.Empty);
-
-        if (apis == null)
+        var apisSection = Context.Configuration.GetSection("apis");
+        if (apisSection == null)
         {
             throw new Exception("Apis section not found.");
         }
 
-        if (!apis.Any())
+        var apis = apisSection.Get<List<ApiConfig>>();
+        if (apis is null || apis.Count == 0)
         {
             throw new Exception("Apis section has no data.");
         }
