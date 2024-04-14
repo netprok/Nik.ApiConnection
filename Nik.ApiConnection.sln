@@ -14,7 +14,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_commands", "_commands", "{
 		nuget-commands.txt = nuget-commands.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nik.ApiConnection.UnitTests", "Nik.ApiConnection.UnitTests\Nik.ApiConnection.UnitTests.csproj", "{F0F0A585-73AA-4091-9F12-26AB40903200}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nik.ApiConnection.UnitTests", "Nik.ApiConnection.UnitTests\Nik.ApiConnection.UnitTests.csproj", "{F0F0A585-73AA-4091-9F12-26AB40903200}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8ACF6576-5A13-4B20-8F91-44D1CA54F9F3}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
