@@ -1,6 +1,6 @@
 ﻿namespace Nik.ApiConnection;
 
-public sealed class ApiCacher : IApiCacher
+public sealed class ApiCacher(ILogger<ApiCacher> logger) : IApiCacher
 {
     private List<ApiCache> cache = new();
     private readonly object cacheLock = new();
@@ -22,6 +22,8 @@ public sealed class ApiCacher : IApiCacher
                 Request = request,
                 Response = response
             });
+
+            logger.LogDebug($"Cached: ConfigKey = {configKey}, Action = {action}, Request = {request}, Response = {response}");
         }
     }
 
@@ -35,11 +37,16 @@ public sealed class ApiCacher : IApiCacher
                 item.CreateTime < DateTime.Now - interval
             );
 
-            return cache.FirstOrDefault(item =>
-                item.ConfigKey == configKey &&
-                item.Action == action &&
-                item.Request == request
-            )?.Response;
+            var cachedItem = cache.FirstOrDefault(item =>
+                            item.ConfigKey == configKey &&
+                            item.Action == action &&
+                            item.Request == request
+                        );
+
+            logger.LogDebug($"Retrieved from cached: ConfigKey = {configKey}, Action = {action}, Request = {request}, Cached item: {cachedItem}, Response = {cachedItem?.Response}");
+
+
+            return cachedItem?.Response;
         }
     }
 }
