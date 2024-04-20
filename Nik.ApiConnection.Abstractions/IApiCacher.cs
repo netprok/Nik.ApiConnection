@@ -2,7 +2,7 @@
 
 public interface IApiCacher
 {
-    object? Get(string configKey, string action, object request, TimeSpan interval);
+    void Create(string configKey, string action, object request, HttpResponseMessage response, TimeSpan interval);
 
-    void Create(string configKey, string action, object request, object response, TimeSpan interval);
+    HttpResponseMessage? Get(string configKey, string action, object request, TimeSpan interval);
 }
